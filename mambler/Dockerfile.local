@@ -1,0 +1,8 @@
+FROM python:3.13.0-bookworm
+
+USER root
+RUN apt update -y
+RUN apt install -y pipx && \
+    pipx install poetry==1.8.4
+ENV HOME=/root
+ENV PATH="$HOME/.local/bin:$PATH"

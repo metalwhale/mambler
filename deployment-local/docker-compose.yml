@@ -1,0 +1,11 @@
+services:
+  mambler:
+    build:
+      context: ../mambler/
+      dockerfile: Dockerfile.local
+    environment:
+      - POETRY_CACHE_DIR=/usr/src/mambler/cache/pypoetry
+    volumes:
+      - ../:/usr/src/mambler/
+    tty: true
+    working_dir: /usr/src/mambler/mambler/
